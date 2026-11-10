@@ -29,24 +29,24 @@ jobs:
           trap 'rm -rf "$stage"' EXIT
 
           cat > "$map_file" <<'IMAGE_MAP'
-img_1085.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/img_1085.jpg
-img_1099-1.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/img_1099-1.jpg
-img_1094.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/img_1094.jpg
-untitled.png|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/untitled.png
-img_1087.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/img_1087.jpg
-img_1100.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/img_1100.jpg
-124d3f2212a12b1a95b3e7b8dbecf4e0.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/124d3f2212a12b1a95b3e7b8dbecf4e0.jpg
-images-1.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/images-1.jpg
-img_1089.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/img_1089.jpg
-download.png|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/06/download.png
-logo-slp-1.png|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/06/logo-slp-1.png
-75753zedercorporation-3-1.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/06/75753zedercorporation-3-1.jpg
-xun1552571609.png|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/06/xun1552571609.png
-maillogo1.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/06/maillogo1.jpg
-logo-1.png|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/06/logo-1.png
-1.png|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/1.png
-img_1080-1.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/img_1080-1.jpg
-IMAGE_MAP
+          img_1085.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/img_1085.jpg
+          img_1099-1.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/img_1099-1.jpg
+          img_1094.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/img_1094.jpg
+          untitled.png|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/untitled.png
+          img_1087.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/img_1087.jpg
+          img_1100.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/img_1100.jpg
+          124d3f2212a12b1a95b3e7b8dbecf4e0.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/124d3f2212a12b1a95b3e7b8dbecf4e0.jpg
+          images-1.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/images-1.jpg
+          img_1089.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/img_1089.jpg
+          download.png|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/06/download.png
+          logo-slp-1.png|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/06/logo-slp-1.png
+          75753zedercorporation-3-1.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/06/75753zedercorporation-3-1.jpg
+          xun1552571609.png|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/06/xun1552571609.png
+          maillogo1.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/06/maillogo1.jpg
+          logo-1.png|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/06/logo-1.png
+          1.png|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/1.png
+          img_1080-1.jpg|https://khuonmauhoalong.wordpress.com/wp-content/uploads/2023/05/img_1080-1.jpg
+          IMAGE_MAP
 
           count=0
           while IFS='|' read -r filename url; do
