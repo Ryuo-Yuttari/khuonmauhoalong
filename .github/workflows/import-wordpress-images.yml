@@ -52,10 +52,27 @@ jobs:
           while IFS='|' read -r filename url; do
             [ -n "$filename" ] || continue
             echo "Downloading $filename"
-            curl --fail --location --silent --show-error \
-              --retry 3 --retry-all-errors \
-              --user-agent "Mozilla/5.0 (compatible; website-image-migration/1.0)" \
-              "$url" --output "$stage/$filename"
+            relative_path="${url#https://khuonmauhoalong.wordpress.com/}"
+            upload_path="${relative_path#wp-content/uploads/}"
+            candidates=(
+              "https://i0.wp.com/khuonmauhoalong.wordpress.com/${relative_path}?ssl=1"
+              "https://khuonmauhoalong.files.wordpress.com/${upload_path}"
+              "$url"
+            )
+            downloaded=false
+            for candidate in "${candidates[@]}"; do
+              echo "Trying source for $filename: $candidate"
+              if curl --fail --location --silent --show-error --max-time 40 \
+                --retry 1 --retry-all-errors \
+                --referer "https://khuonmauhoalong.wordpress.com/" \
+                --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130.0 Safari/537.36" \
+                "$candidate" --output "$stage/$filename"; then
+                downloaded=true
+                break
+              fi
+              rm -f "$stage/$filename"
+            done
+            [ "$downloaded" = true ] || { echo "Could not download $filename from any WordPress image endpoint."; exit 1; }
             mime="$(file --brief --mime-type "$stage/$filename")"
             case "$mime" in
               image/jpeg|image/png) ;;
