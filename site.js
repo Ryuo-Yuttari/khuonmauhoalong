@@ -80,6 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const addFallbackLink = (label, href) => {
           const link = document.createElement('a');
           link.href = href;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
           link.textContent = label;
           link.style.color = 'var(--orange)';
           link.style.fontWeight = '700';
